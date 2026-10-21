@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conecta Seguro: aprenda a reconhecer golpes digitais, treine em simulações e teste seus conhecimentos para se proteger na internet.">
+    <title>Conecta Seguro - Início</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body class="bg-[#f4f7f6] text-gray-800 flex flex-col min-h-screen">
+
+    <a href="#conteudo" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:text-[#0f172a] focus:px-4 focus:py-2">Pular para o conteúdo</a>
+
+    <header class="bg-[#1e293b] text-white sticky top-0 z-40 shadow-md">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <a href="index.html" class="text-2xl font-bold tracking-tight flex items-center gap-2">
+                <i class="fa-solid fa-shield-halved text-[#38bdf8]" aria-hidden="true"></i>
+                <span>Conecta <span class="text-[#38bdf8]">seguro</span></span>
+            </a>
+            <nav aria-label="Principal">
+                <ul class="flex flex-wrap justify-center gap-2 sm:gap-6 text-sm sm:text-base font-medium">
+                    <li><a href="index.html" aria-current="page" class="tab-btn active px-3 py-2 text-[#38bdf8]"><i class="fa-solid fa-circle-info mr-1.5" aria-hidden="true"></i>Sobre o projeto</a></li>
+                    <li><a href="aprender.html" class="tab-btn px-3 py-2 text-[#cbd5e1] hover:text-[#38bdf8]"><i class="fa-solid fa-book-open mr-1.5" aria-hidden="true"></i>Aprender</a></li>
+                    <li><a href="jogar.html" class="tab-btn px-3 py-2 text-[#cbd5e1] hover:text-[#38bdf8]"><i class="fa-solid fa-gamepad mr-1.5" aria-hidden="true"></i>Jogar</a></li>
+                    <li><a href="testar.html" class="tab-btn px-3 py-2 text-[#cbd5e1] hover:text-[#38bdf8]"><i class="fa-solid fa-square-check mr-1.5" aria-hidden="true"></i>Testar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo" class="max-w-6xl mx-auto px-4 py-8 flex-1 w-full">
+        <div class="animate-fade-in space-y-8">
+
+            <!-- Hero -->
+            <section class="bg-white rounded-xl p-8 text-center shadow-sm border border-gray-100">
+                <div class="inline-flex items-center justify-center p-3 bg-sky-50 rounded-full text-[#0284c7] mb-4">
+                    <i class="fa-solid fa-lock text-3xl" aria-hidden="true"></i>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-extrabold text-[#0f172a] mb-4">Conecta Seguro</h1>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
+                    Aprenda a reconhecer golpes digitais, treine com situações reais e saia sabendo como se proteger e o que fazer se algo der errado.
+                </p>
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 pt-6 border-t border-gray-100">
+                    <div class="p-3">
+                        <span id="module-count" class="block text-2xl font-bold text-[#0f172a]">8</span>
+                        <span class="text-xs text-gray-600 uppercase tracking-wider font-semibold">Módulos de aprendizado</span>
+                    </div>
+                    <div class="p-3">
+                        <span id="scenario-count" class="block text-2xl font-bold text-[#0f172a]">13</span>
+                        <span class="text-xs text-gray-600 uppercase tracking-wider font-semibold">Cenários no simulador</span>
+                    </div>
+                    <div class="p-3">
+                        <span id="quiz-bank-count" class="block text-2xl font-bold text-[#0f172a]">20</span>
+                        <span class="text-xs text-gray-600 uppercase tracking-wider font-semibold">Perguntas no quiz</span>
+                    </div>
+                    <div class="p-3">
+                        <span class="block text-2xl font-bold text-[#0284c7]">100%</span>
+                        <span class="text-xs text-gray-600 uppercase tracking-wider font-semibold">Gratuito e educativo</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Como usar -->
+            <section aria-labelledby="como-usar">
+                <h2 id="como-usar" class="text-xl font-bold text-[#0f172a] mb-4">Como aproveitar o site</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <a href="aprender.html" class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:border-sky-300 transition block">
+                        <span class="text-xs font-bold text-[#0284c7] uppercase tracking-wider">1. Aprenda</span>
+                        <p class="text-sm text-gray-700 mt-1">Leia os módulos e marque o que você já fez para se proteger.</p>
+                    </a>
+                    <a href="jogar.html" class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:border-sky-300 transition block">
+                        <span class="text-xs font-bold text-[#0284c7] uppercase tracking-wider">2. Pratique</span>
+                        <p class="text-sm text-gray-700 mt-1">Decida o que fazer diante de mensagens reais, golpes e comunicações legítimas.</p>
+                    </a>
+                    <a href="testar.html" class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:border-sky-300 transition block">
+                        <span class="text-xs font-bold text-[#0284c7] uppercase tracking-wider">3. Teste</span>
+                        <p class="text-sm text-gray-700 mt-1">Responda ao quiz, veja onde errou e refaça com perguntas novas.</p>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Regras de ouro -->
+            <section aria-labelledby="regras" class="bg-[#1e293b] text-white rounded-xl p-6 md:p-8">
+                <h2 id="regras" class="text-xl font-bold mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-shield-halved text-[#38bdf8]" aria-hidden="true"></i> As 5 regras de ouro
+                </h2>
+                <ol class="space-y-3 text-sm md:text-base text-slate-200 list-decimal list-inside">
+                    <li><strong class="text-white">Pare e respire.</strong> Todo golpe depende de você decidir com pressa.</li>
+                    <li><strong class="text-white">Nunca compartilhe senhas ou códigos.</strong> Nem com "suporte", "banco" ou amigo.</li>
+                    <li><strong class="text-white">Confirme por outro canal.</strong> Ligue para o número que você já conhece ou abra o aplicativo oficial.</li>
+                    <li><strong class="text-white">Desconfie do bom demais.</strong> Prêmio, desconto enorme e emprego fácil costumam ser iscas.</li>
+                    <li><strong class="text-white">Errou? Aja rápido.</strong> Avise o banco, troque as senhas e registre um boletim de ocorrência.</li>
+                </ol>
+            </section>
+
+            <!-- Progresso -->
+            <section aria-labelledby="progresso" class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                <h2 id="progresso" class="text-lg font-bold text-[#0f172a] mb-3">Seu progresso neste aparelho</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                    <div class="bg-slate-50 rounded-lg p-4 border border-gray-100">
+                        <span class="block text-xs uppercase font-semibold text-gray-600 mb-1">Simulador (melhor resultado)</span>
+                        <span id="best-sim" class="font-bold text-[#0f172a]">Ainda não jogou</span>
+                    </div>
+                    <div class="bg-slate-50 rounded-lg p-4 border border-gray-100">
+                        <span class="block text-xs uppercase font-semibold text-gray-600 mb-1">Quiz (melhor resultado)</span>
+                        <span id="best-quiz" class="font-bold text-[#0f172a]">Ainda não fez</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cards -->
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm card-border-top border border-gray-100">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="p-2 bg-red-50 text-red-600 rounded-lg">
+                            <i class="fa-solid fa-triangle-exclamation text-xl" aria-hidden="true"></i>
+                        </div>
+                        <h2 class="text-xl font-bold text-[#1e293b]">O problema</h2>
+                    </div>
+                    <p class="text-gray-700 text-sm leading-relaxed mb-4">
+                        Os golpes digitais crescem e ficam cada vez mais convincentes. Eles raramente exploram falhas técnicas: exploram a nossa confiança, o medo e a pressa. Por isso, saber reconhecer os sinais é a melhor defesa.
+                    </p>
+                    <ul class="text-xs text-gray-700 space-y-1 bg-gray-50 p-3 rounded-lg">
+                        <li class="flex items-center gap-1.5"><i class="fa-solid fa-circle text-red-400 text-[8px]" aria-hidden="true"></i> Senhas fracas e repetidas</li>
+                        <li class="flex items-center gap-1.5"><i class="fa-solid fa-circle text-red-400 text-[8px]" aria-hidden="true"></i> Links falsos por SMS, e-mail e WhatsApp</li>
+                        <li class="flex items-center gap-1.5"><i class="fa-solid fa-circle text-red-400 text-[8px]" aria-hidden="true"></i> Falsos parentes, falsas centrais e lojas falsas</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm card-border-top border border-gray-100">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="p-2 bg-sky-50 text-[#0284c7] rounded-lg">
+                            <i class="fa-solid fa-lightbulb text-xl" aria-hidden="true"></i>
+                        </div>
+                        <h2 class="text-xl font-bold text-[#1e293b]">A nossa proposta</h2>
+                    </div>
+                    <p class="text-gray-700 text-sm leading-relaxed mb-4">
+                        Uma plataforma simples e gratuita com guias práticos, um simulador com situações reais e um quiz que mostra onde você ainda pode melhorar. O objetivo é que você saia sabendo agir.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="aprender.html" class="text-xs bg-[#0284c7] hover:bg-[#0369a1] text-white px-3 py-1.5 rounded font-medium transition">Aprender</a>
+                        <a href="jogar.html" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-800 px-3 py-1.5 rounded font-medium transition">Praticar no simulador</a>
+                        <a href="testar.html" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-800 px-3 py-1.5 rounded font-medium transition">Fazer o quiz</a>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm card-border-top border border-gray-100">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="p-2 bg-emerald-50 text-emerald-700 rounded-lg">
+                            <i class="fa-solid fa-book text-xl" aria-hidden="true"></i>
+                        </div>
+                        <h2 class="text-xl font-bold text-[#1e293b]">Fontes e referências</h2>
+                    </div>
+                    <p class="text-gray-700 text-sm leading-relaxed mb-3">
+                        O conteúdo se apoia em materiais de referência sobre segurança e proteção de dados:
+                    </p>
+                    <div class="space-y-2 text-xs">
+                        <a href="https://cartilha.cert.br/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2 bg-gray-50 hover:bg-sky-50 rounded transition text-slate-800 font-medium">
+                            <span><i class="fa-solid fa-arrow-up-right-from-square text-[#0284c7] mr-2" aria-hidden="true"></i>CERT.br - Cartilha de Segurança</span>
+                            <i class="fa-solid fa-angle-right text-gray-500" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.gov.br/anpd/pt-br" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2 bg-gray-50 hover:bg-sky-50 rounded transition text-slate-800 font-medium">
+                            <span><i class="fa-solid fa-arrow-up-right-from-square text-[#0284c7] mr-2" aria-hidden="true"></i>ANPD - LGPD</span>
+                            <i class="fa-solid fa-angle-right text-gray-500" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://new.safernet.org.br/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2 bg-gray-50 hover:bg-sky-50 rounded transition text-slate-800 font-medium">
+                            <span><i class="fa-solid fa-arrow-up-right-from-square text-[#0284c7] mr-2" aria-hidden="true"></i>SaferNet Brasil</span>
+                            <i class="fa-solid fa-angle-right text-gray-500" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://owasp.org/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2 bg-gray-50 hover:bg-sky-50 rounded transition text-slate-800 font-medium">
+                            <span><i class="fa-solid fa-arrow-up-right-from-square text-[#0284c7] mr-2" aria-hidden="true"></i>OWASP (referência técnica)</span>
+                            <i class="fa-solid fa-angle-right text-gray-500" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-[#0f172a] text-[#94a3b8] text-center py-6 px-4 text-xs sm:text-sm mt-auto border-t border-slate-800">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <p>Conecta Seguro - Projeto educativo de segurança digital</p>
+            <p>Desenvolvido por <span class="text-slate-200 font-semibold">Ana, João e Lívia</span></p>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

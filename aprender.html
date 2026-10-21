@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guias práticos e checklists para se proteger de phishing, golpes de Pix, falsos parentes e roubo de senhas.">
+    <title>Conecta Seguro - Aprender</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body class="bg-[#f4f7f6] text-gray-800 flex flex-col min-h-screen">
+
+    <a href="#conteudo" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:text-[#0f172a] focus:px-4 focus:py-2">Pular para o conteúdo</a>
+
+    <header class="bg-[#1e293b] text-white sticky top-0 z-40 shadow-md">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <a href="index.html" class="text-2xl font-bold tracking-tight flex items-center gap-2">
+                <i class="fa-solid fa-shield-halved text-[#38bdf8]" aria-hidden="true"></i>
+                <span>Conecta <span class="text-[#38bdf8]">seguro</span></span>
+            </a>
+            <nav aria-label="Principal">
+                <ul class="flex flex-wrap justify-center gap-2 sm:gap-6 text-sm sm:text-base font-medium">
+                    <li><a href="index.html" class="tab-btn px-3 py-2 text-[#cbd5e1] hover:text-[#38bdf8]">Sobre o projeto</a></li>
+                    <li><a href="aprender.html" aria-current="page" class="tab-btn active px-3 py-2 text-[#38bdf8]">Aprender</a></li>
+                    <li><a href="jogar.html" class="tab-btn px-3 py-2 text-[#cbd5e1] hover:text-[#38bdf8]">Jogar</a></li>
+                    <li><a href="testar.html" class="tab-btn px-3 py-2 text-[#cbd5e1] hover:text-[#38bdf8]">Testar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo" class="max-w-6xl mx-auto px-4 py-8 flex-1 w-full">
+        <div class="animate-fade-in space-y-6">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                <div>
+                    <h1 class="text-2xl font-bold text-[#0f172a]">Módulos de aprendizado</h1>
+                    <p class="text-gray-700 text-sm">Abra cada tópico, leia as dicas e marque no checklist o que você já fez. Seu progresso fica salvo neste aparelho.</p>
+                </div>
+                <div class="text-xs bg-sky-100 text-sky-900 font-semibold px-3 py-1.5 rounded-full shrink-0">
+                    Guia prático de segurança
+                </div>
+            </div>
+
+            <div class="bg-amber-50 border border-amber-200 text-amber-900 text-sm rounded-xl p-4 flex items-start gap-3">
+                <i class="fa-solid fa-circle-info mt-0.5" aria-hidden="true"></i>
+                <p>Se você só tem tempo para dois módulos, comece por <strong>Phishing</strong> e <strong>Verificação em duas etapas</strong>. E guarde o módulo <strong>"Caí em um golpe. E agora?"</strong>: ele orienta o que fazer nas primeiras horas.</p>
+            </div>
+
+            <!-- Carregado dinamicamente via JS -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="learn-modules-container"></div>
+        </div>
+    </main>
+
+    <footer class="bg-[#0f172a] text-[#94a3b8] text-center py-6 px-4 text-xs sm:text-sm mt-auto border-t border-slate-800">
+        <p>Conecta Seguro - Projeto educativo de segurança digital</p>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/checklist.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

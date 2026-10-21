@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quiz de cibersegurança: teste o que você sabe sobre golpes, senhas, Pix e privacidade e veja onde pode melhorar.">
+    <title>Conecta Seguro - Quiz e Testes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body class="bg-[#f4f7f6] text-gray-800 flex flex-col min-h-screen">
+
+    <a href="#conteudo" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:text-[#0f172a] focus:px-4 focus:py-2">Pular para o conteúdo</a>
+
+    <header class="bg-[#1e293b] text-white sticky top-0 z-40 shadow-md">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <a href="index.html" class="text-2xl font-bold tracking-tight flex items-center gap-2">
+                <i class="fa-solid fa-shield-halved text-[#38bdf8]" aria-hidden="true"></i>
+                <span>Conecta <span class="text-[#38bdf8]">seguro</span></span>
+            </a>
+            <nav aria-label="Principal">
+                <ul class="flex flex-wrap justify-center gap-2 sm:gap-6 text-sm sm:text-base font-medium">
+                    <li><a href="index.html" class="tab-btn px-3 py-2 text-[#cbd5e1] hover:text-[#38bdf8]">Sobre o projeto</a></li>
+                    <li><a href="aprender.html" class="tab-btn px-3 py-2 text-[#cbd5e1] hover:text-[#38bdf8]">Aprender</a></li>
+                    <li><a href="jogar.html" class="tab-btn px-3 py-2 text-[#cbd5e1] hover:text-[#38bdf8]">Jogar</a></li>
+                    <li><a href="testar.html" aria-current="page" class="tab-btn active px-3 py-2 text-[#38bdf8]">Testar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo" class="max-w-6xl mx-auto px-4 py-8 flex-1 w-full">
+        <div class="animate-fade-in space-y-6">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div>
+                    <h1 class="text-2xl font-bold text-[#0f172a] flex items-center gap-2">
+                        <i class="fa-solid fa-square-check text-[#0284c7]" aria-hidden="true"></i> Quiz de cibersegurança
+                    </h1>
+                    <p class="text-gray-700 text-sm">Responda e descubra se você está preparado para navegar com segurança. Ao final, você vê o que errou e como corrigir. Cada rodada sorteia perguntas diferentes.</p>
+                </div>
+                <div class="text-xs bg-slate-100 text-slate-800 font-semibold px-3 py-1.5 rounded-full shrink-0">
+                    <span class="quiz-round-size">10</span> perguntas por rodada
+                </div>
+            </div>
+
+            <!-- Quiz -->
+            <div id="quiz-container" class="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-200">
+                <div class="w-full bg-gray-100 h-2.5 rounded-full mb-6 overflow-hidden" role="progressbar" aria-label="Progresso do quiz">
+                    <div id="quiz-progress" class="bg-[#0284c7] h-2.5 rounded-full transition-all duration-300" style="width: 0%;"></div>
+                </div>
+
+                <div class="flex justify-between items-center mb-4 text-xs font-bold text-gray-600 uppercase tracking-wider gap-2">
+                    <span id="quiz-question-number">Pergunta 1</span>
+                    <span id="quiz-category" class="text-[#0284c7]"></span>
+                </div>
+
+                <h2 id="quiz-question-text" class="text-lg md:text-xl font-bold text-[#0f172a] mb-6">Carregando pergunta...</h2>
+
+                <div id="quiz-options" class="space-y-3 mb-6"></div>
+
+                <div id="quiz-explanation" aria-live="polite" class="hidden p-4 rounded-xl bg-slate-50 border border-slate-200 mb-6 animate-fade-in">
+                    <h3 id="explanation-title" class="font-bold text-sm mb-1"></h3>
+                    <p id="explanation-body" class="text-sm text-gray-700 leading-relaxed"></p>
+                </div>
+
+                <div class="flex justify-end">
+                    <button id="quiz-next-btn" type="button" onclick="nextQuestion()" class="hidden bg-[#0284c7] hover:bg-[#0369a1] text-white font-semibold px-6 py-2.5 rounded-xl transition text-sm">
+                        Próxima pergunta <i class="fa-solid fa-arrow-right ml-1" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Resultado -->
+            <div id="quiz-result" class="hidden space-y-6 animate-fade-in">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-200 text-center">
+                    <div id="quiz-badge-icon" class="w-20 h-20 mx-auto bg-sky-100 text-[#0284c7] rounded-full flex items-center justify-center text-4xl mb-4">
+                        <i class="fa-solid fa-award" aria-hidden="true"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-[#0f172a] mb-2">Quiz concluído!</h2>
+                    <p class="text-gray-700 mb-4">Você acertou <span id="quiz-final-score" class="font-bold text-[#0284c7] text-xl">0</span> de <span class="quiz-round-size">10</span> perguntas.</p>
+
+                    <div class="max-w-md mx-auto bg-slate-50 border p-4 rounded-xl mb-6">
+                        <span class="text-xs uppercase font-bold text-gray-600 block mb-1">Seu nível de conhecimento</span>
+                        <h3 id="quiz-badge-title" class="text-lg font-bold text-[#1e293b]"></h3>
+                        <p id="quiz-badge-desc" class="text-sm text-gray-700 mt-1"></p>
+                    </div>
+
+                    <button type="button" onclick="restartQuiz()" class="bg-[#1e293b] hover:bg-[#0f172a] text-white font-semibold px-6 py-3 rounded-xl transition text-sm inline-flex items-center gap-2">
+                        <i class="fa-solid fa-rotate-left" aria-hidden="true"></i> Fazer outra rodada
+                    </button>
+                </div>
+
+                <!-- Revisão dos erros -->
+                <div id="quiz-review" class="hidden bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                    <h3 class="text-lg font-bold text-[#0f172a] mb-1 flex items-center gap-2">
+                        <i class="fa-solid fa-rotate text-[#0284c7]" aria-hidden="true"></i> Revise o que errou
+                    </h3>
+                    <p class="text-sm text-gray-700 mb-4">Estas são as perguntas em que você errou, com a resposta certa. Vale reler o módulo correspondente em <a href="aprender.html" class="text-[#0284c7] underline font-medium">Aprender</a>.</p>
+                    <ul id="quiz-review-list" class="space-y-3"></ul>
+                </div>
+
+                <!-- Regras de ouro -->
+                <div class="bg-[#1e293b] text-white p-6 rounded-xl">
+                    <h3 class="text-lg font-bold mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-shield-halved text-[#38bdf8]" aria-hidden="true"></i> Leve para a vida: as 5 regras de ouro
+                    </h3>
+                    <ol class="space-y-2 text-sm text-slate-200 list-decimal list-inside">
+                        <li><strong class="text-white">Pare e respire.</strong> Todo golpe depende de você decidir com pressa.</li>
+                        <li><strong class="text-white">Nunca compartilhe senhas ou códigos.</strong> Nem com "suporte", "banco" ou amigo.</li>
+                        <li><strong class="text-white">Confirme por outro canal.</strong> Ligue para o número oficial ou abra o aplicativo.</li>
+                        <li><strong class="text-white">Desconfie do bom demais.</strong> Prêmios, descontos enormes e emprego fácil são iscas.</li>
+                        <li><strong class="text-white">Errou? Aja rápido.</strong> Avise o banco, troque as senhas e registre um boletim de ocorrência.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#0f172a] text-[#94a3b8] text-center py-6 px-4 text-xs sm:text-sm mt-auto border-t border-slate-800">
+        <p>Conecta Seguro - Projeto educativo de segurança digital</p>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
